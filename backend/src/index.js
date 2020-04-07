@@ -35,9 +35,11 @@ function logRequest(request, response, next) {
 
     const logLable = `[${method.toUpperCase()}] ${url}`;
 
-    console.log(logLable);
+    console.time(logLable);
 
     next();
+
+    console.timeEnd(logLable);
 }
 
 app.use(logRequest);
