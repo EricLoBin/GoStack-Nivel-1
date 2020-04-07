@@ -20,7 +20,7 @@ app.get('/projects', (request, response) => {
 });
 
 app.post('/projects', (request, response) => {
-    // const { title, owner } = request.body;
+    const { title, owner } = request.body;
 
     // console.log(title);
     // console.log(owner);
@@ -35,7 +35,9 @@ app.post('/projects', (request, response) => {
 app.put('/projects/:id', (request, response) => {
     const { id } = request.params;
 
-    console.log(id);
+    const project = projects.find(project => project.id === id);
+
+    if (projectIndex < 0)
 
     return response.json([
         'Projeto 4',
