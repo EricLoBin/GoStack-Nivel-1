@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/Header';
 
 function App() {
-    const projects = ['Desenvolvimento de app', 'Front-end web'];
+    const [projects, setProjects] = useState(['Desenvolvimento de app', 'Front-end web']);
+
+    /**
+     * useState retorna uma array com 2 posições
+     * 
+     * 1. Variavel com o valor inicial
+     * 2. função para atualizar valor
+     */
 
     function handleAddProject() {
-        projects.push(`Novo projeto ${Date.now()}`)
-
-        console.log('Project');
+        setProjects([...projects, `Novo Projeto ${Date.now()}`]);
     }
 
     return (
